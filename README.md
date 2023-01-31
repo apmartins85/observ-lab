@@ -233,14 +233,24 @@ Username
 ```
 
 ### Loki + Tempo
-After login, click in the left side on explore button and set `loki` datasource to find some syntetic log + trace
-The logql code should be:
-```
-{namespace="synthetic-load-generator"} |= ``
+
+To produce some tracing, frist thing you need to do is interact with your hotrod application. How?
+in your terminal:
+```bash
+$kubectl port-forward svc/hotrod 8080 -n default
 ```
 
-And we can see something like the printscreen below
-![Loki + Tempo](image/tempo%2Bloki.png)
+Open your browser and surf to `http://localhost:8080/`
+
+![Gravação de Tela 2023-01-31 às 14 21 47](https://user-images.githubusercontent.com/58525821/215837169-85dcb090-8f68-41e6-bb0d-b3839b1a756b.gif)
+
+
+To see your log and correlate them with traces, go back to grafana and .. 
+
+![lokiTempo](image/lokiTempo.gif)
+
+
+
 ### Prometheus
 
 Firstly, hit the `myapp` api to increase http_request metric:

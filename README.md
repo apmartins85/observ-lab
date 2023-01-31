@@ -247,6 +247,8 @@ Open your browser and surf to `http://localhost:8080/`
 
 To see your log and correlate them with traces, go back to grafana and .. 
 
+![lokiTempo](image/lokiTempo.gif)
+
 
 
 ### Prometheus
